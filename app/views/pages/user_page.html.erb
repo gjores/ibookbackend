@@ -1,0 +1,13 @@
+<h1><%= current_user.email %></h1>
+<% unless @groups.empty? %>
+	<% @groups.each do |g| %>
+		<%= form_tag "add_group" do  %>
+			<%= g.title %><%= button_tag "Prenumera", :class => "btn btn-primary", :value => "#{g.id}" %>
+		<% end %>
+	<% end %>		
+<% end %>
+<% if signed_in? %>
+	<% @usergroups.each do |g| %>
+			<%= g.title %>	
+	<% end %>
+<% end %>

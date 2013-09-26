@@ -1,9 +1,13 @@
 Ibookbackend::Application.routes.draw do
   resources :groups
-
-
   resources :questions
-
+  resources :pages do 
+    collection do 
+      post 'add_group'
+      get 'user_page'
+    end 
+  end
+  
 
   devise_for :users
 

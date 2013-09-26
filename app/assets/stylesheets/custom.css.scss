@@ -20,3 +20,18 @@ border-color: #adadad;}
 }
 .navbar.navbar-default.navbar-fixed-top:hover{
 	opacity:1;}
+
+
+.puls{
+/*	box-shadow: 0px 0px 0px red;*/
+	-webkit-animation: puls 1s ease-out;
+	-webkit-animation-iteration-count: infinite; 
+}
+@-webkit-keyframes puls{
+	0%{box-shadow: 0px 0px 0px red;}
+	50%{box-shadow: 0px 0px 5px red;}
+	100%{box-shadow: 0px 0px 0px red;}
+}
+.puls:hover{
+	box-shadow: 0;
+}

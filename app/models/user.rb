@@ -1,6 +1,11 @@
 class User
   include Mongoid::Document
   rolify
+  after_create :assign_default_role
+  def assign_default_role
+    add_role(:student)
+
+  end
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -40,4 +45,5 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+  has_many :questions
 end
